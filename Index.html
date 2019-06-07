@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Empresa Fictícia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:799px)" href="Css/MenuMin0.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width:800px)" href="Css/Menu800x600.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width:1000px)" href="Css/Menu1024x768.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width:1350px)" href="Css/Menu1366x768.css"/>
+        
+        <link rel="stylesheet" type="text/css" media="screen and (max-width:799px)" href="Css/ResMin0.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 800px)" href="Css/Res800x600.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width:1000px)" href="Css/Res1024x768.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width:1350px)" href="Css/Res1366x768.css"/>
+
+        
+
+        <script src="JavaScript/Jpanel.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script type="text/javascript">
+            function menu() {
+                $('.nav-toggle').click(function () {
+                    if ($(".nav").hasClass("side-fechado")) {
+                        $('.nav').animate({
+                            left: "0px",
+                        }, 100, function () {
+                            $(".nav").removeClass("side-fechado");
+                        });
+                        $('.foto').animate({
+                            left: "175px",
+                        }, 100);
+                    } else {
+                        $('.nav').animate({
+                            left: "-175px",
+                        }, 100, function () {
+                            $(".nav").addClass("side-fechado");
+                        });
+                        $('.foto').animate({
+                            left: "0px",
+                        }, 100);
+                    }
+                });
+            }
+
+//Menu Sidebar
+            $(window).resize(function () {
+                var tamanhoJanela = $(window).width();
+                $(".nav-toggle").remove();
+
+                if (tamanhoJanela < 799) {
+                    $('.nav').css('left', '-175px').addClass('side-fechado');
+                    $('.nav').append("<div class='nav-toggle'>M</div>");
+                    $('.foto').css("left", 0);
+                } else {
+                    $('.nav').css('left', '0px').addClass('side-fechado');
+                }
+
+                menu();
+            });
+
+            $(document).ready(function () {
+                var tamanhoJanela = $(window).width();
+                $(".nav-toggle").remove();
+
+                if (tamanhoJanela < 799) {
+                    $('.nav').css('left', '-175px').addClass('side-fechado');
+                    ;
+                    $('.nav').append("<div class='nav-toggle'>M</div>");
+                } else {
+                    $('.nav').css('left', '0px').addClass('side-fechado');
+                }
+
+                menu();
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="layout">
+            <div class="top">
+                <div class="logo"><img src="Imagens/logosemslogan.png"/></div>
+            </div>
+            <div class="drop">
+                <nav class="nav nav-aberta">
+                    <div class="wrap">
+                        <ul class="listaNav">
+                            <li><a target="tela" href="Paginas/ProdutosBox.php">Produtos</a></li>
+                            <li><a href="#">Promoções</a></li>
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Atendimento</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="mid">
+                <iframe name="tela" src="Paginas/ProdutosBox.php" scrolling="no"></iframe>
+            </div>
+            <div class="bottom">
+                <p align="center">Todos os direitos reservados à Hypersoft Systems Technology Copyright &#169; 2016.</p>
+            </div>
+        </div>
+    </body>
+</html>

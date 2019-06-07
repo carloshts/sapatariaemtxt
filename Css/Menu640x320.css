@@ -1,0 +1,28 @@
+.wrap ul{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-align: right;
+    width: 640px;
+    background: #0061a7;
+}
+.wrap ul li{
+    display: inline;
+    
+}
+.wrap ul li a{
+    padding: 2px 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-family: arial;
+    font-size: 14px;
+    border-bottom: 3px solid #0061a7;
+}
+.wrap ul li a:hover{
+    height: 100%;
+    display: inline-block;
+    background: #ff9900;
+    border-bottom: 3px solid #ff6600;
+}

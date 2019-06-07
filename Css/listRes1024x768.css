@@ -1,0 +1,45 @@
+body{
+    background: none;
+}
+.layout{
+    position: relative;
+    left: 50%;
+    margin-left: -225px;
+    width: 450px;
+    height: 100%;
+    border: none;
+    text-align: center;
+}
+.top{
+    width: 450px;
+    height: 30px;
+    border: none;
+    text-align: center;
+}
+.conteudo{
+    width: 450px;
+    border: none;
+    text-align: center;
+}
+table{
+    border: 3px solid #ff9900;
+    border-collapse: collapse;
+    color: black;
+    font-family: arial;
+}
+table td{
+    background: #ff6;
+    font-size: 12px;
+    font-family: arial;
+    text-align: center;
+}
+table th{
+    background: #ff9900;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+#imgsapato{
+    height: 250px;
+    width: 250px;
+}

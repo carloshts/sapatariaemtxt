@@ -1,0 +1,61 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>slide</title>
+        <!--[if lt IE 9]>
+        <script src="html5.js"></script>
+<![endif]-->
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="ResMin0.css"/>
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 580px)" href="ResMax.css"/>
+    </head>
+    <body> 
+        <figure id="slide">
+            <img src="../Imagens/t6.jpg" alt="Moda masculina">
+            <img src="../Imagens/t7.jpg" alt="Moda masculina">
+            <img src="../Imagens/t17.jpg" alt="Moda feminina">
+            <img src="../Imagens/t8.jpg" alt="Moda masculina">
+            <img src="../Imagens/t9.jpg" alt="Moda masculina">
+            <img src="../Imagens/t15.jpg" alt="Moda feminina">
+            <img src="../Imagens/t10.jpg" alt="Moda masculina">
+            <img src="../Imagens/t11.jpg" alt="Moda masculina">
+            <img src="../Imagens/t12.jpg" alt="Moda masculina"> 
+            <img src="../Imagens/t19.jpg" alt="Moda feminina">
+            <img src="../Imagens/t13.jpg" alt="Moda masculina">
+            <img src="../Imagens/t14.jpg" alt="Moda masculina">
+            <img src="../Imagens/t20.jpg" alt="Moda feminina">
+            
+            
+            
+            
+        </figure> 
+        <script type="text/javascript" src="jquery.min.js"></script> 
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#slide img:eq(0)").addClass("ativo").show();
+            });
+
+            $("#slide").prepend("<p>" + texto + "</p>");
+            setInterval(slide, 2500);
+            function slide() {
+                if ($(".ativo").next().size()) {
+                    var texto = $(".ativo").fadeOut().removeClass("ativo").next().fadeIn().addClass("ativo").attr("alt");
+                    $("#slide p").remove();
+                    $("#slide").prepend("<p>" + texto + "</p>");
+                    $("#slide p").hide().html(texto).delay(500).fadeIn();
+                } else {
+                    $(".ativo").fadeOut().removeClass("ativo");
+                    var texto = $("#slide img:eq(0)").fadeIn().addClass("ativo").attr("alt");
+                    $("#slide p").remove();
+                    $("#slide").prepend("<p>" + texto + "</p>");
+                    $("#slide p").hide().html(texto).delay(500).fadeIn();
+                }
+
+
+            }
+            var texto = $(".ativo").attr("alt");
+
+        </script> 
+    </body>
+
+</html>
